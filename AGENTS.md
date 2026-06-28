@@ -25,7 +25,7 @@
 ## Testing instructions
 
 - Find the CI plan in the .github/workflows folder
-- Ignore the .github/workflows/hacs-validate.yml workflow if not running from the main repository at https://github.com/make-all/tuya-local
+- Ignore the .github/workflows/hacs-validate.yml workflow if not running from the main repository at https://github.com/Alex-Ratel/tuya-local-apolitical
 - run `uv run pytest` to run every test defined for the project
 - run `uv run pytest tests/test_device_config.py` to test only yaml file changes or additions
 - run `uv run pytest tests/test_translations.py` to test only json file changes or additions

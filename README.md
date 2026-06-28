@@ -1,9 +1,10 @@
-![logo](custom_components/tuya_local/brand/icon.svg) 
+This is a fork of tuya-local.
+Unfortunately, the author of the original project appears to have adopted a wonderfully “principled” policy of discrimination based on nationality, refusing to add devices from countries inhabited by people with, in his view, the wrong nationality.
+That is why this fork now exists.
+This project will include devices from the original project, as well as any devices the original author refused to add after citing your nationality as a reason. Feel free to open an issue, and I will add support for your device as soon as I can.
 
-Please report any [issues](https://github.com/make-all/tuya-local/issues) and feel free to raise [pull requests](https://github.com/make-all/tuya-local/pulls).
-[Many others](https://github.com/make-all/tuya-local/blob/main/ACKNOWLEDGEMENTS.md) have contributed their help already.
 
-[![BuyMeCoffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/jasonrumney)
+![logo](custom_components/tuya_local/brand/icon.svg)
 
 This is a Home Assistant integration to support devices running Tuya
 firmware without going via the Tuya cloud.  Devices are supported
@@ -41,7 +42,26 @@ follow the [instructions for adding a custom
 repository](https://hacs.xyz/docs/faq/custom_repositories) and then
 the integration will be available to install like any other.
 
-[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=make-all&repository=tuya-local&category=integration)
+### Migrating from the original tuya-local
+
+This fork uses the same integration domain (`tuya_local`) as the original
+project, so your existing devices and settings are preserved automatically —
+they are stored by Home Assistant in its config entry registry, not in the
+integration files. There is no separate import step.
+
+To switch over:
+
+1. In HACS, remove the original `tuya-local` repository (this only removes the
+   integration files, not your configured devices).
+2. Add this fork as a custom repository
+   (`https://github.com/Alex-Ratel/tuya-local-apolitical`, category
+   *Integration*) and install it.
+3. Restart Home Assistant.
+
+After the restart, your previously configured devices and entities reappear as
+before, now running on this fork. Note that the original and this fork cannot
+be installed at the same time, since they share the same `custom_components/tuya_local`
+folder.
 
 ## Configuration
 
@@ -130,7 +150,7 @@ Assistant.
 
 ## Device support
 
-A list of currently supported devices can be found in the [DEVICES.md](https://github.com/make-all/tuya-local/blob/main/DEVICES.md) file.
+A list of currently supported devices can be found in the [DEVICES.md](DEVICES.md) file.
 
 Note that devices sometimes get firmware upgrades, or incompatible
 versions are sold under the same model name, so it is possible that
@@ -178,7 +198,7 @@ predefined (cloud only) device database, or climate device simulation.
 
 ## Contributing
 
-Documentation on building a device configuration file is in [/custom_components/tuya_local/devices/README.md](https://github.com/make-all/tuya-local/blob/main/custom_components/tuya_local/devices/README.md)
+Documentation on building a device configuration file is in [/custom_components/tuya_local/devices/README.md](custom_components/tuya_local/devices/README.md)
 
 If your device is not listed, you can find the information required to add a configuration for it in the following locations:
 
@@ -266,7 +286,7 @@ compatible with this scheme.
 Tuya IR and RF blasters are exposed as remote entities and support learning and
 sending commands via the standard Home Assistant remote services. IR blasters are
 also exposed as general `infrared` emitters, and learned commands can be sent to
-other `infrared` emitters using the tuya-local specific "Send Learned IR command"
+other `infrared` emitters using the tuya-local-apolitical specific "Send Learned IR command"
 service.
 
 ### Learning commands

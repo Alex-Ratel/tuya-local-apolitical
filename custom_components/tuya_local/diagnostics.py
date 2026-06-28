@@ -1,4 +1,4 @@
-"""Diagnostics support for tuya-local."""
+"""Diagnostics support for tuya-local-apolitical."""
 
 from __future__ import annotations
 
@@ -44,7 +44,7 @@ def _async_get_diagnostics(
     entry: ConfigEntry,
     device: DeviceEntry | None = None,
 ) -> dict[str, Any]:
-    """Return diagnostics for a tuya-local config entry."""
+    """Return diagnostics for a tuya-local-apolitical config entry."""
     hass_data = hass.data[DOMAIN][get_device_id(entry.data)]
     hostname = entry.data.get(CONF_HOST, "")
 

@@ -976,11 +976,11 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry):
 
     except Exception as e:
         cleanup_failed_device(hass, device_id)
-        raise ConfigEntryNotReady("tuya-local device not ready") from e
+        raise ConfigEntryNotReady("tuya-local-apolitical device not ready") from e
 
     if not device.has_returned_state:
         cleanup_failed_device(hass, device_id)
-        raise ConfigEntryNotReady("tuya-local device offline")
+        raise ConfigEntryNotReady("tuya-local-apolitical device offline")
 
     device_conf = await hass.async_add_executor_job(
         get_config,

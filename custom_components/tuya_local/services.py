@@ -46,7 +46,7 @@ async def async_handle_send_ir_command(entity, call: ServiceCall):
     _LOGGER.info("Sending saved remote command: %s", call.data)
 
     if not isinstance(entity, TuyaLocalRemote):
-        raise ValueError("Entity must be a tuya-local remote")
+        raise ValueError("Entity must be a tuya-local-apolitical remote")
     if not entity._storage_loaded:
         await entity._async_load_storage()
 

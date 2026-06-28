@@ -611,7 +611,7 @@ As cameras are not well supported locally, forcing them into a camera entity doe
 from the camera.
 - **switch** (optional, boolean) a dp to turn the camera on and off.
 
-**NOTE**: tuya-local does not directly support video streaming from cameras.  Some cameras provide ONVIF or WebRTC compliant streams locally which you can use the relevant integrations to capture, others may be cloud-only.
+**NOTE**: tuya-local-apolitical does not directly support video streaming from cameras.  Some cameras provide ONVIF or WebRTC compliant streams locally which you can use the relevant integrations to capture, others may be cloud-only.
 
 ### `climate`
 - **current_temperature** (optional, number) a dp that reports the current temperature.

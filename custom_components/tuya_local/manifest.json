@@ -2,14 +2,14 @@
     "domain": "tuya_local",
     "name": "Tuya Local",
     "codeowners": [
-        "@make-all"
+        "@Alex-Ratel"
     ],
     "config_flow": true,
     "dependencies": [],
-    "documentation": "https://github.com/make-all/tuya-local",
+    "documentation": "https://github.com/Alex-Ratel/tuya-local-apolitical",
     "integration_type": "device",
     "iot_class": "local_push",
-    "issue_tracker": "https://github.com/make-all/tuya-local/issues",
+    "issue_tracker": "https://github.com/Alex-Ratel/tuya-local-apolitical/issues",
     "loggers": [
         "tuya_local",
         "tinytuya"

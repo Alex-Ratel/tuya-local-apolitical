@@ -46,7 +46,7 @@ from .helpers.log import log_json
 
 _LOGGER = logging.getLogger(__name__)
 DEVICE_DETAILS_URL = (
-    "https://github.com/make-all/tuya-local/blob/main/DEVICE_DETAILS.md"
+    "https://github.com/Alex-Ratel/tuya-local-apolitical/blob/main/DEVICE_DETAILS.md"
     "#finding-your-device-id-and-local-key"
 )
 
@@ -506,7 +506,7 @@ class ConfigFlowHandler(ConfigFlow, domain=DOMAIN):
             log_json(dps),
         )
         _LOGGER.warning(
-            "Include the previous log messages with any new device request to https://github.com/make-all/tuya-local/issues/",
+            "Include the previous log messages with any new device request to https://github.com/Alex-Ratel/tuya-local-apolitical/issues/",
         )
         if type_options:
             detected = getattr(self, "_auto_detected_protocol", None)
