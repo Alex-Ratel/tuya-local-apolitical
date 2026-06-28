@@ -3,6 +3,14 @@
 All notable changes to this fork are documented here. This project is a fork of
 tuya-local; entries below cover changes made in the fork.
 
+## 2026.6.7 - 2026-06-29
+
+### Fixed
+- **Critical:** `helpers/device_config.py` used a Python 2 `except TypeError,
+  ValueError:` clause, which is a `SyntaxError` under Python 3. It prevented the
+  config-matching module from importing at all, so no device could be detected
+  or recognised. Replaced with `except (TypeError, ValueError):`.
+
 ## 2026.6.6 - 2026-06-29
 
 ### Added
