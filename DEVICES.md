@@ -1438,6 +1438,7 @@ Some specialised devices have built-in sensors to also present other
 entity types as sub devices.
 
 - Air conditioner / heat pump via Moes IR hub
+- Generic Tuya IR air conditioner (infrared_ac sub-device)
 - Neo IR Air Conditioner controller
 
 ### Devices supported via Zigbee hubs

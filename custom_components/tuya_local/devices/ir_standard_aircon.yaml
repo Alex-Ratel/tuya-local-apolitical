@@ -1,0 +1,77 @@
+name: IR air conditioner
+# Generic Tuya IR-hub air conditioner (category infrared_ac).
+# Mode/fan codes follow the Tuya standard infrared_ac instruction set:
+#   mode: 0 cool, 1 heat, 2 auto, 3 fan, 4 dry
+#   wind: 0 auto, 1 low, 2 medium, 3 high
+# State is simulated by the IR hub (one-way IR, no feedback from the AC).
+# Add the product id under products: once known to improve matching.
+entities:
+  - entity: climate
+    dps:
+      - id: 101
+        type: boolean
+        name: hvac_mode
+        mapping:
+          - dps_val: false
+            value: "off"
+          - dps_val: true
+            constraint: mode
+            conditions:
+              - dps_val: "0"
+                value: cool
+              - dps_val: "1"
+                value: heat
+              - dps_val: "2"
+                value: heat_cool
+              - dps_val: "3"
+                value: fan_only
+              - dps_val: "4"
+                value: dry
+      - id: 102
+        type: string
+        name: mode
+        hidden: true
+      - id: 103
+        type: integer
+        name: temperature
+        unit: C
+        range:
+          min: 16
+          max: 30
+      - id: 104
+        type: string
+        name: fan_mode
+        mapping:
+          - dps_val: "0"
+            value: auto
+          - dps_val: "1"
+            value: low
+          - dps_val: "2"
+            value: medium
+          - dps_val: "3"
+            value: high
+      - id: 105
+        type: boolean
+        name: swing_mode
+        mapping:
+          - dps_val: false
+            value: "off"
+          - dps_val: true
+            value: "on"
+  - entity: remote
+    dps:
+      - id: 201
+        type: string
+        name: send
+        optional: true
+      - id: 202
+        type: string
+        name: receive
+        optional: true
+        persist: false
+  - entity: infrared
+    dps:
+      - id: 201
+        type: string
+        name: send
+        optional: true
