@@ -420,7 +420,7 @@
 - Milano ceiling fan
 - New Widetech WPF-16SW5 7-speed pedestal fan
 - NHZS fan speed switch
-- Novadigital ceiling fan with light
+- Novadigital ceiling fan with light
 - NP-DVL-01 ceiling fan with RGB+CW light
 - OmniBreeze DC2313R tower fan (4-speed and 5-speed models)
 - Orison Chanfok Neo ceiling fan with light
@@ -613,6 +613,7 @@
 - Amenzo dishwasher
 - Anko 1.7L smart kettle
 - Atomi coffee maker
+- Barista CFX-A01R coffee machine
 - BlitzHome BH-CDW1 dishwasher
 - Ciarra CBCS4850 range hood
 - Casdon 16J3S dishwasher

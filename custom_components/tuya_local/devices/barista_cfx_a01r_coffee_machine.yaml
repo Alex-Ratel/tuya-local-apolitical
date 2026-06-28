@@ -1,0 +1,359 @@
+name: Coffee Machine
+products:
+  - id: wwt2piakfupgvrtd
+    manufacturer: Barista
+    model: CFX-A01R
+entities:
+  - entity: switch
+    name: Power
+    icon: "mdi:coffee-maker"
+    dps:
+      - id: 1
+        name: switch
+        type: boolean
+        optional: true
+  - entity: switch
+    name: Start/Stop
+    dps:
+      - id: 2
+        name: switch
+        type: boolean
+        optional: true
+  - entity: select
+    name: Mode
+    icon: "mdi:coffee"
+    dps:
+      - id: 5
+        name: option
+        type: string
+        mapping:
+          - dps_val: espresso
+            value: Espresso
+          - dps_val: espresso_b
+            value: Espresso B
+          - dps_val: cappuccino
+            value: Cappuccino
+          - dps_val: milkfoam
+            value: Milk Foam
+          - dps_val: wifi_reset
+            value: WiFi Reset
+          - dps_val: core_clean
+            value: Core Clean
+          - dps_val: milk_clean
+            value: Milk Clean
+          - dps_val: descaling
+            value: Descaling
+  - entity: switch
+    name: Beep
+    category: config
+    dps:
+      - id: 20
+        name: switch
+        type: boolean
+  - entity: binary_sensor
+    name: Fault
+    category: diagnostic
+    class: problem
+    dps:
+      - id: 22
+        name: sensor
+        type: bitfield
+        mapping:
+          - dps_val: 0
+            value: false
+          - value: true
+      - id: 22
+        name: fault_code
+        type: bitfield
+      - id: 22
+        name: description
+        type: bitfield
+        mapping:
+          - dps_val: 0
+            value: OK
+          - dps_val: 1
+            value: Brew unit fault
+          - dps_val: 2
+            value: Waste container fault
+          - dps_val: 4
+            value: Milk tank fault
+          - dps_val: 8
+            value: Water circuit fault
+          - dps_val: 16
+            value: No beans
+          - dps_val: 32
+            value: Container full
+          - dps_val: 64
+            value: Grounds container fault
+  - entity: number
+    name: Espresso powder
+    category: config
+    dps:
+      - id: 101
+        name: value
+        type: integer
+        unit: g
+        range:
+          min: 7
+          max: 12
+  - entity: number
+    name: Espresso flow
+    category: config
+    dps:
+      - id: 102
+        name: value
+        type: integer
+        unit: ml
+        range:
+          min: 20
+          max: 100
+        mapping:
+          - step: 5
+  - entity: number
+    name: Espresso temperature
+    category: config
+    dps:
+      - id: 103
+        name: value
+        type: integer
+        unit: C
+        range:
+          min: 85
+          max: 94
+  - entity: number
+    name: Large espresso powder
+    category: config
+    dps:
+      - id: 104
+        name: value
+        type: integer
+        unit: g
+        range:
+          min: 7
+          max: 12
+  - entity: number
+    name: Large espresso flow
+    category: config
+    dps:
+      - id: 105
+        name: value
+        type: integer
+        unit: ml
+        range:
+          min: 80
+          max: 200
+        mapping:
+          - step: 5
+  - entity: number
+    name: Large espresso temperature
+    category: config
+    dps:
+      - id: 106
+        name: value
+        type: integer
+        unit: C
+        range:
+          min: 85
+          max: 94
+  - entity: switch
+    name: Make coffee
+    icon: "mdi:coffee"
+    dps:
+      - id: 107
+        name: switch
+        type: boolean
+        optional: true
+  - entity: number
+    name: Long black powder
+    category: config
+    dps:
+      - id: 108
+        name: value
+        type: integer
+        unit: g
+        range:
+          min: 7
+          max: 12
+  - entity: number
+    name: Long black flow
+    category: config
+    dps:
+      - id: 109
+        name: value
+        type: integer
+        unit: ml
+        range:
+          min: 40
+          max: 200
+        mapping:
+          - step: 5
+  - entity: number
+    name: Long black temperature
+    category: config
+    dps:
+      - id: 110
+        name: value
+        type: integer
+        unit: C
+        range:
+          min: 85
+          max: 94
+  - entity: number
+    name: Long black water
+    category: config
+    dps:
+      - id: 111
+        name: value
+        type: integer
+        unit: ml
+        range:
+          min: 0
+          max: 200
+        mapping:
+          - step: 5
+  - entity: number
+    name: Hot water amount
+    category: config
+    dps:
+      - id: 112
+        name: value
+        type: integer
+        unit: ml
+        range:
+          min: 0
+          max: 200
+        mapping:
+          - step: 5
+  - entity: number
+    name: Motor PWM
+    category: config
+    dps:
+      - id: 114
+        name: value
+        type: integer
+        range:
+          min: 0
+          max: 100
+  - entity: sensor
+    name: Firmware version
+    category: diagnostic
+    dps:
+      - id: 115
+        name: sensor
+        type: integer
+  - entity: switch
+    name: Timing cleaning
+    category: config
+    dps:
+      - id: 116
+        name: switch
+        type: boolean
+        optional: true
+  - entity: switch
+    name: Energy saving
+    category: config
+    dps:
+      - id: 117
+        name: switch
+        type: boolean
+  - entity: number
+    name: Coffee flow adjustment
+    category: config
+    dps:
+      - id: 119
+        name: value
+        type: integer
+        unit: ml
+        range:
+          min: 0
+          max: 20
+  - entity: number
+    name: Powder adjustment
+    category: config
+    dps:
+      - id: 120
+        name: value
+        type: integer
+        range:
+          min: 0
+          max: 60
+  - entity: number
+    name: Grind time
+    category: config
+    dps:
+      - id: 121
+        name: value
+        type: integer
+        unit: s
+        range:
+          min: 0
+          max: 20
+  - entity: number
+    name: Waste alert level
+    category: config
+    dps:
+      - id: 122
+        name: value
+        type: integer
+        unit: pcs
+        range:
+          min: 6
+          max: 12
+  - entity: button
+    name: Factory reset
+    category: config
+    dps:
+      - id: 123
+        name: button
+        type: boolean
+        optional: true
+  - entity: sensor
+    name: Cups counter
+    icon: "mdi:cup"
+    dps:
+      - id: 124
+        name: sensor
+        type: integer
+        unit: cup
+        class: total_increasing
+  - entity: number
+    name: Hot water flow adjustment
+    category: config
+    dps:
+      - id: 125
+        name: value
+        type: integer
+        range:
+          min: 0
+          max: 100
+  - entity: number
+    name: Energy saving time
+    category: config
+    dps:
+      - id: 128
+        name: value
+        type: integer
+        unit: min
+        range:
+          min: 10
+          max: 60
+        mapping:
+          - step: 10
+  - entity: switch
+    name: Calibration
+    category: config
+    dps:
+      - id: 129
+        name: switch
+        type: boolean
+        optional: true
+  - entity: number
+    name: Coffee temperature adjustment
+    category: config
+    dps:
+      - id: 130
+        name: value
+        type: integer
+        range:
+          min: 0
+          max: 15
