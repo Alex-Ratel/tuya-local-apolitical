@@ -3,6 +3,13 @@
 All notable changes to this fork are documented here. This project is a fork of
 tuya-local; entries below cover changes made in the fork.
 
+## 2026.6.8 - 2026-06-29
+
+### Added
+- Support for the **FBP-95E-GR** fan (product id `enxohlgemolf1cqy`): on/off,
+  preset mode (normal/nature/sleep), speed (1–12), horizontal oscillation, plus
+  anion (ionizer) and beep switches and a countdown timer.
+
 ## 2026.6.7 - 2026-06-29
 
 ### Fixed
