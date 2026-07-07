@@ -3,6 +3,15 @@
 All notable changes to this fork are documented here. This project is a fork of
 tuya-local; entries below cover changes made in the fork.
 
+## 2026.7.1 - 2026-07-07
+
+### Changed
+- Merged upstream tuya-local **2026.7.0**, bringing in the latest device
+  configs, translations and fixes. The fork's own additions and changes are
+  kept on top (rebranding, the `device_config.py` Python 3 fix, and the Barista
+  CFX-A01R, generic IR air conditioner and FBP-95E-GR profiles). Version set to
+  2026.7.1 to stay one ahead of upstream.
+
 ## 2026.6.8 - 2026-06-29
 
 ### Added
