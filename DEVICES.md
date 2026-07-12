@@ -252,6 +252,7 @@
 - SolarEast (Adlar Castra) Aurora II heat pump
 - Tauclima DGN-250 heat pump water heater
 - Thermann R290 heat pump water heater
+- Thermex Boss 12 Wi-Fi electric boiler
 - Thermex IF series V pro and Lima 80V hot water systems
 - Thermoval Aqua TI water heater
 

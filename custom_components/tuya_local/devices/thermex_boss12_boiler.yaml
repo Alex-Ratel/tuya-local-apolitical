@@ -1,0 +1,176 @@
+name: Boiler
+products:
+  - id: jqmuspt7zb9b9n7c
+    manufacturer: Thermex
+    model: Boss 12 Wi-Fi
+entities:
+  - entity: climate
+    dps:
+      - id: 1
+        type: boolean
+        name: hvac_mode
+        mapping:
+          - dps_val: false
+            value: "off"
+          - dps_val: true
+            value: heat
+      - id: 5
+        type: integer
+        name: temperature
+        unit: C
+        range:
+          min: 25
+          max: 85
+      - id: 6
+        type: integer
+        name: current_temperature
+        unit: C
+      - id: 2
+        type: string
+        name: preset_mode
+        mapping:
+          - dps_val: user
+            value: comfort
+          - dps_val: action
+            value: activity
+          - dps_val: sleep
+            value: sleep
+      - id: 111
+        type: string
+        name: hvac_action
+        mapping:
+          - dps_val: "1"
+            value: idle
+          - dps_val: "2"
+            value: heating
+          - dps_val: "3"
+            value: heating
+  - entity: number
+    name: Activity temperature
+    category: config
+    class: temperature
+    dps:
+      - id: 104
+        type: integer
+        name: value
+        unit: C
+        range:
+          min: 25
+          max: 85
+  - entity: number
+    name: Sleep temperature
+    category: config
+    class: temperature
+    dps:
+      - id: 105
+        type: integer
+        name: value
+        unit: C
+        range:
+          min: 25
+          max: 85
+  - entity: number
+    name: Hysteresis
+    category: config
+    dps:
+      - id: 106
+        type: integer
+        name: value
+        unit: C
+        range:
+          min: 5
+          max: 20
+  - entity: number
+    name: Heating time
+    category: config
+    dps:
+      - id: 107
+        type: integer
+        name: value
+        unit: min
+        range:
+          min: 5
+          max: 60
+        mapping:
+          - step: 5
+  - entity: number
+    name: Pump time
+    category: config
+    dps:
+      - id: 108
+        type: integer
+        name: value
+        unit: min
+        range:
+          min: 0
+          max: 30
+  - entity: select
+    name: Heating type
+    category: config
+    dps:
+      - id: 109
+        type: string
+        name: option
+        mapping:
+          - dps_val: "1"
+            value: Radiator
+          - dps_val: "2"
+            value: Floor
+  - entity: switch
+    name: Antifreeze
+    icon: "mdi:snowflake-melt"
+    category: config
+    dps:
+      - id: 112
+        type: string
+        name: switch
+        mapping:
+          - dps_val: "ON"
+            value: true
+          - dps_val: "OFF"
+            value: false
+  - entity: sensor
+    name: Power
+    class: power
+    category: diagnostic
+    dps:
+      - id: 101
+        type: integer
+        name: sensor
+        unit: kW
+        class: measurement
+  - entity: binary_sensor
+    name: Fault
+    category: diagnostic
+    class: problem
+    dps:
+      - id: 20
+        type: bitfield
+        name: sensor
+        mapping:
+          - dps_val: 0
+            value: false
+          - value: true
+      - id: 20
+        type: bitfield
+        name: fault_code
+      - id: 20
+        type: bitfield
+        name: description
+        mapping:
+          - dps_val: 0
+            value: OK
+          - dps_val: 1
+            value: Freeze protection fault
+          - dps_val: 2
+            value: Heating temperature sensor fault
+          - dps_val: 4
+            value: Overheat protection fault
+          - dps_val: 8
+            value: Communication fault
+          - dps_val: 16
+            value: Water flow sensor fault
+          - dps_val: 32
+            value: Water pressure fault
+          - dps_val: 64
+            value: DHW temperature sensor fault

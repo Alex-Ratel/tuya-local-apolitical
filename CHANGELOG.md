@@ -3,6 +3,16 @@
 All notable changes to this fork are documented here. This project is a fork of
 tuya-local; entries below cover changes made in the fork.
 
+## 2026.7.2 - 2026-07-07
+
+### Added
+- Support for the **Thermex Boss 12 Wi-Fi** electric boiler (product id
+  `jqmuspt7zb9b9n7c`, category `bgl`): climate control (on/off, target/current
+  heating temperature, user/activity/sleep preset, heating status), plus
+  activity/sleep setpoints, hysteresis, heating and pump times, heating type
+  (radiator/floor), antifreeze switch, boiler power sensor and a fault
+  diagnostic sensor with decoded error bits.
+
 ## 2026.7.1 - 2026-07-07
 
 ### Changed
